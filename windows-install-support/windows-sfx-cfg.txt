@@ -1,0 +1,14 @@
+;!@Install@!UTF-8!
+Title="@TARGET_ARCH@ Toolchain"
+BeginPrompt="This will install the cross-compiler toolchain for @TARGET_ARCH@-gcc, version @GCC_VERSION@"
+CancelPrompt="Do you want to cancel the toolchain installation?"
+ExtractDialogText="Please wait..."
+ExtractPathText="Where do you want to install the toolchain?"
+ExtractTitle="Extracting..."
+GUIFlags="8+32+64+256+4096"
+GUIMode="1"
+InstallPath="C:\\DevTools\SysGCC\\@TARGET_ARCH@"
+OverwriteMode="2"
+ExecuteFile="rundll32.exe"
+Delete="rundll32.exe"
+;!@InstallEnd@!

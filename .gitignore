@@ -1,0 +1,12 @@
+crosstool-ng*
+
+windows-install-support/temp/
+
+gcc63-win64-cross/
+gcc63-raspbian-cross/
+gcc73-rpi3-cross/
+gcc73-imx7-cross/
+gcc73-rpi3-canadian-cross/
+gcc73-imx7-canadian-cross/
+
+install-*

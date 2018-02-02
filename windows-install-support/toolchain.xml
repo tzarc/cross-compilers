@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Toolchain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ToolchainName>GroView @CONFIG_NAME@ (@TARGET_ARCH@)</ToolchainName>
+  <ToolchainType>Linux</ToolchainType>
+  <PathDetectionKeyStrip>0</PathDetectionKeyStrip>
+  <GNUTargetID>@TARGET_ARCH@</GNUTargetID>
+  <ToolchainID>com.groview.@CONFIG_NAME@</ToolchainID>
+  <BinaryDirectory>bin</BinaryDirectory>
+  <Prefix>@TARGET_ARCH@-</Prefix>
+  <Make>make.exe</Make>
+  <IsCygwinBased>false</IsCygwinBased>
+  <GCCVersion>@GCC_VERSION@</GCCVersion>
+  <GDBVersion>@GDB_VERSION@</GDBVersion>
+  <BinutilsVersion>@BINUTILS_VERSION@</BinutilsVersion>
+  <LIBCVersion>@LIBC_VERSION@</LIBCVersion>
+  <Revision>1</Revision>
+  <RelativeSysrootPath>@TARGET_ARCH@/sysroot</RelativeSysrootPath>
+</Toolchain>
