@@ -84,8 +84,8 @@ create_sfx_windows() {
 #create_sfx_linux gcc73-rpi3-cross "$HOME/x-tools/armv8-rpi3-linux-gnueabihf"
 #create_sfx_linux gcc73-imx7-cross "$HOME/x-tools/armv7-imx7-linux-gnueabihf"
 
-create_sfx_windows gcc72-rpi3-canadian-cross "$HOME/x-tools/HOST-x86_64-w64-mingw32/armv8-rpi3-linux-gnueabihf"
-create_sfx_windows gcc72-imx7-canadian-cross "$HOME/x-tools/HOST-x86_64-w64-mingw32/armv7-imx7-linux-gnueabihf"
+#create_sfx_windows gcc72-rpi3-canadian-cross "$HOME/x-tools/HOST-x86_64-w64-mingw32/armv8-rpi3-linux-gnueabihf"
+create_sfx_windows gcc72-imx7-canadian-cross "$HOME/x-tools/HOST-x86_64-w64-mingw32/arm-poky-linux-gnueabi"
 
 #create_sfx_linux gcc73-avr-cross "$HOME/x-tools/avr"
 #create_sfx_windows gcc73-avr-canadian-cross "$HOME/x-tools/HOST-x86_64-w64-mingw32/avr"

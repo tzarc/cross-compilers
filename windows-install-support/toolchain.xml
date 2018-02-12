@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Toolchain xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ToolchainName>GroView @CONFIG_NAME@ (@TARGET_ARCH@)</ToolchainName>
+  <ToolchainName>Groview @CONFIG_NAME@ (@TARGET_ARCH@)</ToolchainName>
   <ToolchainType>Linux</ToolchainType>
   <PathDetectionKeyStrip>0</PathDetectionKeyStrip>
   <GNUTargetID>@TARGET_ARCH@</GNUTargetID>

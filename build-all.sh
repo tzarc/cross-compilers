@@ -41,9 +41,9 @@ export PATH="$script_dir/crosstool-ng_prefix/bin:$PATH"
 #build_one gcc73-rpi3-cross
 #build_one gcc73-imx7-cross
 
-build_one gcc63-win64-cross
+#build_one gcc63-win64-cross
 
 export PATH="$HOME/x-tools/x86_64-w64-mingw32/bin:$PATH"
 
-build_one gcc72-rpi3-canadian-cross
+#build_one gcc72-rpi3-canadian-cross
 build_one gcc72-imx7-canadian-cross

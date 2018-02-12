@@ -6,6 +6,8 @@ gcc63-win64-cross/
 gcc63-raspbian-cross/
 gcc73-rpi3-cross/
 gcc73-imx7-cross/
+gcc72-rpi3-canadian-cross/
+gcc72-imx7-canadian-cross/
 gcc73-rpi3-canadian-cross/
 gcc73-imx7-canadian-cross/
 
