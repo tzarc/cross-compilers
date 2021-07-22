@@ -1,4 +1,6 @@
+tarballs
 crosstool-ng*
 windows-install-support/temp/
-gcc*-cross/
+gcc*/
+
 install-*
