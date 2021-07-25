@@ -1,6 +1,7 @@
+build_prefix
+target_prefix
 tarballs
 crosstool-ng*
 windows-install-support/temp/
 gcc*/
-
 install-*

@@ -39,37 +39,50 @@ build_one() {
         && mkdir -p "$script_dir/$config_name/.build"
 
     cp "$script_dir/$config_name.config" "$script_dir/$config_name/.config"
-    ln -sf "$script_dir/tarballs" "$script_dir/$config_name/.build/tarballs"
 
     pushd "$script_dir/$config_name"
+
+    # Update the config
+    cat << EOF >> .config
+CT_RM_RF_PREFIX_DIR=y
+CT_PREFIX_DIR_RO=y
+CT_LOCAL_TARBALLS_DIR="$script_dir/tarballs"
+CT_PREFIX_DIR="$script_dir/target_prefix/$config_name"
+CT_STATIC_TOOLCHAIN=y
+CT_DEBUG_GDB=y
+CT_GDB_CROSS_STATIC=y
+CT_COMP_TOOLS_MAKE=y
+# CT_COMP_LIBS_NEWLIB_NANO is not set
+EOF
+    ct-ng olddefconfig
+
+    # Build the compiler
     ct-ng build
     popd
 }
 
-[[ ! -d "$script_dir/crosstool-ng_source" ]] \
-    && mkdir -p "$script_dir/crosstool-ng_source" \
-    && git clone https://github.com/crosstool-ng/crosstool-ng "$script_dir/crosstool-ng_source"
-
 update_crosstool() {
-    pushd "$script_dir/crosstool-ng_source"
+    pushd "$script_dir/crosstool-ng"
     git clean -xfd
     git checkout -- .
     git pull --ff-only
     ./bootstrap
-    ./configure --prefix="$script_dir/crosstool-ng_prefix"
+    ./configure --prefix="$script_dir/build_prefix"
     make
     make install
     popd
 }
 
-if [[ "${1:-}" == "" ]] ; then
+export PATH="$script_dir/build_prefix/bin:$PATH"
 
-    export PATH="$script_dir/crosstool-ng_prefix/bin:$PATH"
-
-    #build_one win64-cross
-
-    export PATH="$HOME/x-tools/x86_64-w64-mingw32/bin:$PATH"
-
-    build_one gcc11.1-avr
-
+if ! havecmd ct-ng ; then
+    update_crosstool
 fi
+
+#build_one gcc11.1_win64-cross
+
+export PATH="$HOME/x-tools/x86_64-w64-mingw32/bin:$PATH"
+
+build_one gcc11.1_avr
+build_one gcc11.1_arm
+build_one gcc11.1_riscv32
